@@ -16,7 +16,11 @@ Node::Node(Bounds* bound, int layer,Tree* belongTree)
 
 Node::~Node()
 {
-	delete(bound);
+	delete bound;
+	for (auto& item:nodeChilds)
+	{
+		delete item;
+	}
 }
 
 void Node::InsertNode(AActor* actor)

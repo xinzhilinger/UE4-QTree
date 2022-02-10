@@ -12,6 +12,12 @@ Tree::Tree(Bounds* bound, int maxLayer, UObject* object)
 	this->object = object;
 	Root = new Node(bound, 0,this);
 }
+
+
+Tree::~Tree()
+{
+	delete Root;
+}
 void Tree::Insert(AActor* actor)
 {
 	Root->InsertNode(actor);
